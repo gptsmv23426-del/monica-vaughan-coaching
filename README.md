@@ -108,4 +108,61 @@ The form currently uses a `mailto:` handler — clicking submit opens the user's
 
 ---
 
+## Making Future Changes with Claude Code
+
+All site changes flow through the same pipeline: **Claude edits files → git push → Vercel auto-deploys.**
+
+### What you need open
+
+1. **This project folder** open in VS Code:
+   `C:\Claude\Prompts\Website Prompts\monica-vaughan-coaching`
+2. **Claude Code** running inside that VS Code window (the sidebar panel)
+3. That's it — Claude has access to the files, GitHub (to push), and Vercel (to check deployments)
+
+### How to request a change
+
+Just describe what you want in plain English. Examples:
+
+> "Update Monica's bio in the About section with this text: ..."
+
+> "Change the CTA button text from 'Book a Conversation' to 'Schedule a Free Call'"
+
+> "Add a fourth testimonial from Jane D. who said '...'"
+
+> "The hero headline feels too formal — make it warmer"
+
+> "Replace the Unsplash nature photo in the About section with this image: [paste URL]"
+
+Claude will edit the component, you review the diff, approve it, and then Claude pushes to GitHub. Vercel picks it up automatically — the live site updates in ~60 seconds.
+
+### Previewing before it goes live
+
+If you want to see a change locally before it deploys publicly:
+
+```bash
+cd "C:\Claude\Prompts\Website Prompts\monica-vaughan-coaching"
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) — this is a live preview that only you can see.
+
+### What Claude can help with
+
+- **Copy changes** — headlines, body text, service descriptions, testimonials
+- **Design tweaks** — colors, spacing, font sizes, layout adjustments
+- **New sections** — adding a blog, FAQ, pricing, or any new content block
+- **Contact form upgrade** — wiring up a real form service like Formspree or Resend
+- **Custom domain** — pointing `monicavaughan.com` (or similar) at the Vercel deployment
+- **SEO** — meta titles, descriptions, Open Graph images
+- **Performance** — image optimization, loading speed improvements
+
+### What Claude needs from you for content changes
+
+For anything involving Monica's real words, you'll need to provide:
+- The actual copy (Claude won't invent real biographical details)
+- Any new photos (drop them in the `public/` folder and tell Claude the filename)
+- Her real LinkedIn URL and email (currently placeholders in the code)
+
+---
+
 *Built for Monica Vaughan · Rio Grande Valley, Texas*
