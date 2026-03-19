@@ -36,21 +36,21 @@ export default function Hero() {
         <div className={`transition-all duration-[900ms] ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {/* Eyebrow */}
           <p className="text-sienna text-xs tracking-[0.18em] uppercase font-sans mb-6">
-            Life Coach · Rio Grande Valley, Texas
+            Certified LifePlan Guide · Rio Grande Valley, Texas
           </p>
 
           {/* Headline */}
+          {/* TAGLINE OPTION A — ties directly to the plumb line metaphor */}
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.1] text-bark mb-6">
-            Clarity starts with<br />
-            <em className="not-italic text-sienna">one honest</em><br />
-            conversation.
+            Find your<br />
+            <em className="not-italic text-sienna">true vertical.</em>
           </h1>
 
           {/* Sub-headline */}
+          {/* TAGLINE OPTION B — outcome-focused alternative; swap with headline above if preferred */}
           <p className="text-bark-medium text-lg leading-relaxed max-w-md mb-10 font-sans font-light">
-            {/* TODO: Replace with Monica's own words if she has a preferred tagline */}
-            I help people in the RGV find direction, reconnect with their purpose,
-            and build a life that actually feels like theirs.
+            Clarity. Direction. Purpose.<br />
+            <span className="text-base">Because your next season deserves a solid foundation.</span>
           </p>
 
           {/* CTAs */}
@@ -71,8 +71,7 @@ export default function Hero() {
 
           {/* Trust note */}
           <p className="mt-8 text-bark-light text-xs font-sans tracking-wide">
-            {/* TODO: Update if Monica has a specific credential abbreviation she prefers */}
-            Certified through a recognized coaching methodology · No sales pressure
+            Certified LifePlan Guide · No sales pressure
           </p>
         </div>
 

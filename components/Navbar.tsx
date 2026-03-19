@@ -32,10 +32,11 @@ export default function Navbar() {
         {/* Wordmark */}
         <a
           href="#"
-          className="font-serif text-xl md:text-2xl tracking-tight text-bark hover:text-sienna transition-colors"
-          aria-label="Monica Vaughan — home"
+          className="flex flex-col leading-tight group"
+          aria-label="The Plumb Line — home"
         >
-          Monica Vaughan
+          <span className="font-serif text-xl md:text-2xl tracking-tight text-bark group-hover:text-sienna transition-colors">The Plumb Line</span>
+          <span className="text-[0.65rem] tracking-[0.14em] uppercase font-sans text-bark-light group-hover:text-sienna transition-colors">Monica Vaughan</span>
         </a>
 
         {/* Desktop nav */}
