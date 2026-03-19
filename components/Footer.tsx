@@ -8,10 +8,10 @@ export default function Footer() {
 
           {/* Name + tagline */}
           <div className="text-center md:text-left">
-            <p className="font-serif text-xl text-warm-white mb-1">Monica Vaughan</p>
-            {/* TODO: Replace with Monica's preferred tagline */}
+            <p className="font-serif text-xl text-warm-white mb-0.5">The Plumb Line</p>
+            <p className="text-xs font-sans text-white/40 tracking-[0.12em] uppercase mb-1">Monica Vaughan</p>
             <p className="text-sm font-sans text-white/40 italic">
-              Helping you live with intention.
+              Find your true vertical.
             </p>
           </div>
 
@@ -61,8 +61,7 @@ export default function Footer() {
         <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-sans text-white/30">
           <p>&copy; {year} Monica Vaughan. All rights reserved.</p>
           <p>
-            {/* TODO: Remove Paterson Center mention or update wording as Monica prefers */}
-            Certified life coach · Trained through the{' '}
+            Certified LifePlan Guide · Trained through the{' '}
             <a
               href="https://patersoncenter.com"
               target="_blank"

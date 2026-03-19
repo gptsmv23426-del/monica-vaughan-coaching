@@ -18,14 +18,13 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  // TODO: Replace with Monica's preferred page title and description
-  title: 'Monica Vaughan | Life Coach · Rio Grande Valley',
+  title: 'The Plumb Line | Monica Vaughan · Certified LifePlan Guide · Rio Grande Valley',
   description:
-    'Certified life coach helping individuals in the Rio Grande Valley find clarity, purpose, and direction. Book a conversation with Monica Vaughan today.',
-  keywords: ['life coach', 'Rio Grande Valley', 'RGV', 'coaching', 'personal development'],
+    'Certified LifePlan Guide helping individuals in the Rio Grande Valley find clarity, direction, and purpose. Find your true vertical with Monica Vaughan.',
+  keywords: ['LifePlan Guide', 'life coach', 'Rio Grande Valley', 'RGV', 'coaching', 'personal development', 'LifePlan'],
   openGraph: {
-    title: 'Monica Vaughan | Life Coach',
-    description: 'Find clarity, purpose, and direction with Monica Vaughan.',
+    title: 'The Plumb Line | Monica Vaughan',
+    description: 'Find your true vertical. Clarity. Direction. Purpose.',
     type: 'website',
   },
 }

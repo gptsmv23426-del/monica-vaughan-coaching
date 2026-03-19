@@ -79,6 +79,24 @@ export default function About() {
               </p>
             </div>
 
+            {/* Why It Works — The Plumb Line */}
+            <div className="mt-8 p-6 bg-linen rounded-2xl border border-sand/60">
+              <p className="text-sienna text-xs tracking-[0.18em] uppercase font-sans mb-3">Why It Works</p>
+              <p className="font-serif text-lg text-bark leading-snug mb-3">
+                A plumb line reveals what&apos;s truly vertical — what&apos;s aligned, what&apos;s true.
+              </p>
+              <p className="text-bark-medium font-sans font-light text-sm leading-relaxed mb-3">
+                Your clients come in crooked — not because they&apos;re broken, but because life bent them.
+                Empty nest, retirement, a season ending. They&apos;ve lost their vertical. The work is helping
+                them find it again.
+              </p>
+              <p className="text-bark-light font-sans font-light text-sm leading-relaxed italic">
+                In Amos 7, God holds a plumb line against Israel — not to condemn, but to measure against
+                what&apos;s true. LifePlan does the same: it holds a person&apos;s life up against God&apos;s design
+                and says — here&apos;s where you are, and here&apos;s what true looks like.
+              </p>
+            </div>
+
             {/* Credential note */}
             <div className="mt-8 pt-8 border-t border-sand flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-linen border border-sand flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -88,8 +106,7 @@ export default function About() {
                 </svg>
               </div>
               <div>
-                {/* TODO: Update credential text to reflect Monica's exact certification title */}
-                <p className="text-sm font-sans text-bark font-medium">Certified Life Coach</p>
+                <p className="text-sm font-sans text-bark font-medium">Certified LifePlan Guide</p>
                 <p className="text-xs font-sans text-bark-light mt-0.5">
                   Trained through a recognized coaching institution and methodology
                 </p>
