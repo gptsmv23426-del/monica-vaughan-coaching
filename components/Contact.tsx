@@ -6,9 +6,22 @@ import { useReveal } from '@/hooks/useReveal'
 export default function Contact() {
   const ref = useReveal()
   const [status, setStatus] = useState<'idle' | 'sent'>('idle')
+  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({})
 
   // TODO: Replace with Monica's actual email address
   const EMAIL_ADDRESS = 'hello@monicavaughan.com'
+
+  function validate(name: string, email: string, message: string) {
+    const errs: typeof errors = {}
+    if (!name.trim()) errs.name = 'Please enter your name.'
+    if (!email.trim()) {
+      errs.email = 'Please enter your email address.'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      errs.email = 'Please enter a valid email address.'
+    }
+    if (!message.trim()) errs.message = 'Please include a message.'
+    return errs
+  }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -18,6 +31,13 @@ export default function Contact() {
     const name = data.get('name') as string
     const email = data.get('email') as string
     const message = data.get('message') as string
+
+    const errs = validate(name, email, message)
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs)
+      return
+    }
+    setErrors({})
 
     const subject = encodeURIComponent(`Coaching inquiry from ${name}`)
     const body = encodeURIComponent(
@@ -115,9 +135,13 @@ export default function Contact() {
                     name="name"
                     type="text"
                     required
+                    aria-describedby={errors.name ? 'contact-name-error' : undefined}
                     placeholder="First and last name"
-                    className="w-full bg-linen border border-sand rounded-xl px-4 py-3 text-sm font-sans text-bark placeholder:text-bark-light/50 focus:outline-none focus:border-sienna focus:ring-1 focus:ring-sienna/20 transition-colors"
+                    className={`w-full bg-linen border rounded-xl px-4 py-3 text-sm font-sans text-bark placeholder:text-bark-light/50 focus:outline-none focus:ring-1 transition-colors ${errors.name ? 'border-red-400 focus:border-red-400 focus:ring-red-200' : 'border-sand focus:border-sienna focus:ring-sienna/20'}`}
                   />
+                  {errors.name && (
+                    <p id="contact-name-error" role="alert" className="mt-1.5 text-xs text-red-500 font-sans">{errors.name}</p>
+                  )}
                 </div>
 
                 {/* Email */}
@@ -130,9 +154,13 @@ export default function Contact() {
                     name="email"
                     type="email"
                     required
+                    aria-describedby={errors.email ? 'contact-email-error' : undefined}
                     placeholder="you@example.com"
-                    className="w-full bg-linen border border-sand rounded-xl px-4 py-3 text-sm font-sans text-bark placeholder:text-bark-light/50 focus:outline-none focus:border-sienna focus:ring-1 focus:ring-sienna/20 transition-colors"
+                    className={`w-full bg-linen border rounded-xl px-4 py-3 text-sm font-sans text-bark placeholder:text-bark-light/50 focus:outline-none focus:ring-1 transition-colors ${errors.email ? 'border-red-400 focus:border-red-400 focus:ring-red-200' : 'border-sand focus:border-sienna focus:ring-sienna/20'}`}
                   />
+                  {errors.email && (
+                    <p id="contact-email-error" role="alert" className="mt-1.5 text-xs text-red-500 font-sans">{errors.email}</p>
+                  )}
                 </div>
 
                 {/* Message */}
@@ -145,9 +173,13 @@ export default function Contact() {
                     name="message"
                     required
                     rows={5}
+                    aria-describedby={errors.message ? 'contact-message-error' : undefined}
                     placeholder="Tell me a little about where you are and what you're hoping to work through..."
-                    className="w-full bg-linen border border-sand rounded-xl px-4 py-3 text-sm font-sans text-bark placeholder:text-bark-light/50 focus:outline-none focus:border-sienna focus:ring-1 focus:ring-sienna/20 transition-colors resize-none"
+                    className={`w-full bg-linen border rounded-xl px-4 py-3 text-sm font-sans text-bark placeholder:text-bark-light/50 focus:outline-none focus:ring-1 transition-colors resize-none ${errors.message ? 'border-red-400 focus:border-red-400 focus:ring-red-200' : 'border-sand focus:border-sienna focus:ring-sienna/20'}`}
                   />
+                  {errors.message && (
+                    <p id="contact-message-error" role="alert" className="mt-1.5 text-xs text-red-500 font-sans">{errors.message}</p>
+                  )}
                 </div>
 
                 {/* Submit */}
