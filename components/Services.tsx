@@ -16,7 +16,6 @@ const services = [
     tagline: 'Your life, mapped with intention.',
     description:
       'A structured, in-depth engagement that helps you assess where you are, articulate where you want to go, and build a clear, actionable plan for getting there. Ideal for anyone feeling stuck or in the middle of a major life transition.',
-    detail: 'Multi-session engagement · Structured framework · Written plan deliverable',
   },
   {
     id: 'leadership',
@@ -32,7 +31,6 @@ const services = [
     tagline: 'Lead others by knowing yourself.',
     description:
       'Designed for managers, entrepreneurs, and emerging leaders who want to lead with greater confidence and authenticity. We explore your values, your leadership blind spots, and what it means to show up powerfully — without losing yourself.',
-    detail: 'One-on-one sessions · Values alignment · Leadership identity work',
   },
   {
     id: 'discovery',
@@ -46,7 +44,6 @@ const services = [
     tagline: 'Reconnect with who you actually are.',
     description:
       "For individuals who sense that something is off but can't quite name it. Through honest conversation and reflective exercises, we uncover the patterns, beliefs, and desires that shape your choices — and build a clearer picture of the life you truly want.",
-    detail: 'Flexible pacing · Reflective exercises · Ideal starting point',
   },
 ]
 
@@ -92,13 +89,8 @@ export default function Services() {
               <p className="text-sienna text-xs font-sans tracking-wide mb-4 italic">{service.tagline}</p>
 
               {/* Description */}
-              <p className="text-bark-medium font-sans font-light text-sm leading-relaxed flex-1 mb-6">
+              <p className="text-bark-medium font-sans font-light text-sm leading-relaxed flex-1">
                 {service.description}
-              </p>
-
-              {/* Detail tag */}
-              <p className="text-xs text-bark-light font-sans border-t border-sand pt-5">
-                {service.detail}
               </p>
             </article>
           ))}
@@ -106,7 +98,6 @@ export default function Services() {
 
         {/* Bottom note */}
         <p className="reveal mt-10 text-center text-sm text-bark-light font-sans">
-          {/* TODO: Update if Monica offers packages at specific price points */}
           Not sure which is right for you? Start with a free conversation — no commitment required.
         </p>
 
