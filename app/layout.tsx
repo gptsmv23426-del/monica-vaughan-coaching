@@ -1,5 +1,7 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, DM_Sans } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -26,7 +28,17 @@ export const metadata: Metadata = {
     title: 'The Plumb Line | Monica Vaughan',
     description: 'Find your true vertical. Clarity. Direction. Purpose.',
     type: 'website',
+    // TODO: Add og:url once domain is confirmed (e.g. 'https://theplumbline.com')
+    // TODO: Add og:image — a 1200×630 branded card improves social share previews
   },
+}
+
+// Viewport is exported separately per Next.js 14+ recommendation.
+// Putting it inside `metadata` triggers a deprecation warning.
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#FAF8F3',
 }
 
 export default function RootLayout({
@@ -36,7 +48,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body className="bg-cream text-bark font-sans antialiased">{children}</body>
+      <body className="bg-cream text-bark font-sans antialiased">
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   )
 }
