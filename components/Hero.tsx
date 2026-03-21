@@ -36,7 +36,7 @@ export default function Hero() {
         <div className={`transition-all duration-[900ms] ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {/* Eyebrow */}
           <p className="text-sienna text-xs tracking-[0.18em] uppercase font-sans mb-6">
-            Certified LifePlan Guide · Rio Grande Valley, Texas
+            Paterson LifePlan Guide · Rio Grande Valley, Texas
           </p>
 
           {/* Headline */}
@@ -71,7 +71,7 @@ export default function Hero() {
 
           {/* Trust note */}
           <p className="mt-8 text-bark-light text-xs font-sans tracking-wide">
-            Certified LifePlan Guide · No sales pressure
+            Paterson LifePlan Guide · No sales pressure
           </p>
         </div>
 
@@ -95,8 +95,8 @@ export default function Hero() {
             {/* Photo */}
             <div className="relative w-64 h-80 sm:w-72 sm:h-[22rem] md:w-80 md:h-[26rem] rounded-[1.75rem] overflow-hidden shadow-2xl shadow-bark/20">
               <Image
-                src="/monica-vaughan.png"
-                alt="Monica Vaughan, certified life coach based in the Rio Grande Valley, Texas"
+                src="/Mom%20Headshot-Sent%20to%20her.png"
+                alt="Monica Vaughan, Paterson LifePlan Guide based in the Rio Grande Valley, Texas"
                 fill
                 className="object-cover object-center"
                 priority

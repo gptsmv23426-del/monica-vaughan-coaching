@@ -51,31 +51,28 @@ export default function About() {
             </p>
 
             <h2 className="font-serif text-3xl sm:text-4xl leading-[1.2] text-bark mb-8">
-              A guide who has walked<br />
-              <em className="italic">her own winding road.</em>
+              Guiding you to clarity,<br />
+              <em className="italic">purpose, and direction.</em>
             </h2>
 
-            {/* TODO: Replace the paragraphs below with Monica's actual story */}
             <div className="space-y-5 text-bark-medium font-sans font-light leading-[1.85] text-[1.05rem]">
               <p>
-                Monica Vaughan knows what it feels like to stand at a crossroads — uncertain
-                of the next step, but knowing that something needs to change. Her own journey
-                through personal reinvention sparked a deep passion for helping others navigate
-                theirs with intention and courage.
+                I bring fifteen years of television experience as a weathercaster and consumer
+                reporter to this work — a career built on sharp thinking and real audience
+                connection. I also co-founded a Christian hybrid homeschool that served families
+                for eleven years as a nonprofit ministry. I know what it means to answer a
+                calling fully, and I know what it feels like to stand at a crossroads wondering
+                what comes next, because I&apos;ve lived it.
               </p>
               <p>
-                Trained and certified through a rigorous coaching program built on proven
-                methodology, Monica brings both professional discipline and genuine warmth to
-                every coaching relationship. Her approach is grounded in honest conversation,
-                practical reflection, and the belief that every person already holds the
-                wisdom they need — it just takes the right questions to surface it.
+                Through the proven Paterson LifePlan process, I help clients identify their
+                strengths, filter their options, clarify their vocation, and map their next
+                steps — so they leave with a clear path, an actionable plan, and a deep
+                knowledge of who they are and what they&apos;re meant to do.
               </p>
               <p>
-                A proud resident of the Rio Grande Valley, Monica is committed to serving her
-                local community with the same care and intentionality she brings to every
-                client relationship. Whether you&apos;re navigating a career transition,
-                searching for greater purpose, or simply ready to live more deliberately —
-                she&apos;s here to walk alongside you.
+                I also offer the LifePlan process for couples, helping partners align around
+                a shared vision for their life together.
               </p>
             </div>
 
@@ -106,9 +103,9 @@ export default function About() {
                 </svg>
               </div>
               <div>
-                <p className="text-sm font-sans text-bark font-medium">Certified LifePlan Guide</p>
+                <p className="text-sm font-sans text-bark font-medium">Paterson LifePlan Guide</p>
                 <p className="text-xs font-sans text-bark-light mt-0.5">
-                  Trained through a recognized coaching institution and methodology
+                  Certified through the Paterson Center LifePlan process
                 </p>
               </div>
             </div>
