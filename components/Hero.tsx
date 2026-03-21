@@ -95,7 +95,7 @@ export default function Hero() {
             {/* Photo */}
             <div className="relative w-64 h-80 sm:w-72 sm:h-[22rem] md:w-80 md:h-[26rem] rounded-[1.75rem] overflow-hidden shadow-2xl shadow-bark/20">
               <Image
-                src="/monica-headshot.png"
+                src="/Mom%20Headshot-Sent%20to%20her.png"
                 alt="Monica Vaughan, Paterson LifePlan Guide based in the Rio Grande Valley, Texas"
                 fill
                 className="object-cover object-center"
