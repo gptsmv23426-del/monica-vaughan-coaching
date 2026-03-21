@@ -46,11 +46,9 @@
 - Message: non-empty check
 - Inline error messages with `role="alert"` and `aria-describedby` for accessibility
 
-### ⚠️ NEEDS CLIENT INPUT — Placeholder LinkedIn URLs
-**Files:** `components/Contact.tsx:84`, `components/Footer.tsx:43`
-**Risk:** Medium — both links currently point to `https://www.linkedin.com/in/YOUR_LINKEDIN_HANDLE`. If someone registers that LinkedIn handle, visitors will be sent to their profile.
-
-**Action required:** Replace `YOUR_LINKEDIN_HANDLE` in both files with Monica's real LinkedIn profile slug (e.g. `monica-vaughan-rgv`).
+### ✅ FIXED — LinkedIn URLs Updated
+**Files:** `components/Contact.tsx`, `components/Footer.tsx`
+Both LinkedIn links updated to `https://www.linkedin.com/in/monica-vaughan-4a24323b7`.
 
 ### ✅ ALREADY SECURE — External Link Safety
 All `target="_blank"` links correctly include `rel="noopener noreferrer"`. No risk of reverse tabnapping.
@@ -133,10 +131,10 @@ These are placeholder items that require Monica's actual content before going li
 | 1 | `components/About.tsx` | 58 | Replace 3 placeholder paragraphs with Monica's actual biography |
 | 2 | `components/Services.tsx` | ~5 | Replace placeholder service names, descriptions |
 | 3 | `components/Services.tsx` | ~109 | Add real pricing or package names |
-| 4 | `components/Testimonials.tsx` | ~5 | Replace placeholder quotes with real client testimonials |
-| 5 | `components/Contact.tsx` | 11 | Replace `hello@monicavaughan.com` with Monica's real email |
-| 6 | `components/Contact.tsx` | 84 | Replace `YOUR_LINKEDIN_HANDLE` with Monica's LinkedIn slug |
-| 7 | `components/Footer.tsx` | 43 | Replace `YOUR_LINKEDIN_HANDLE` with Monica's LinkedIn slug |
+| ~~4~~ | ~~`components/Testimonials.tsx`~~ | — | ~~Testimonials section removed~~ ✅ |
+| ~~5~~ | ~~`components/Contact.tsx`~~ | — | ~~Email updated to `monicalifeplan@gmail.com`~~ ✅ |
+| ~~6~~ | ~~`components/Contact.tsx`~~ | — | ~~LinkedIn updated~~ ✅ |
+| ~~7~~ | ~~`components/Footer.tsx`~~ | — | ~~LinkedIn updated~~ ✅ |
 
 ---
 
@@ -145,7 +143,7 @@ These are placeholder items that require Monica's actual content before going li
 Before going live, complete the following:
 
 - [ ] Run `npm install` to pick up updated dependencies
-- [ ] Fill in all 7 content TODOs above
+- [ ] Fill in remaining 3 content TODOs above (bio, services, pricing)
 - [ ] Set `NEXT_PUBLIC_SITE_URL` in Vercel environment variables (e.g. `https://theplumbline.com`)
 - [ ] Add a favicon (`public/favicon.ico`)
 - [ ] Create and set an Open Graph image (`openGraph.images` in `layout.tsx`)

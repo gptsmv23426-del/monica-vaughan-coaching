@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             {/* TODO: Replace href with Monica's actual LinkedIn profile URL */}
             <a
-              href="https://www.linkedin.com/in/YOUR_LINKEDIN_HANDLE"
+              href="https://www.linkedin.com/in/monica-vaughan-4a24323b7"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Monica Vaughan on LinkedIn (opens in new tab)"

@@ -8,8 +8,7 @@ export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sent'>('idle')
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({})
 
-  // TODO: Replace with Monica's actual email address
-  const EMAIL_ADDRESS = 'hello@monicavaughan.com'
+  const EMAIL_ADDRESS = 'monicalifeplan@gmail.com'
 
   function validate(name: string, email: string, message: string) {
     const errs: typeof errors = {}
@@ -101,7 +100,7 @@ export default function Contact() {
               <p className="text-xs font-sans text-bark-light mb-3 tracking-wide uppercase">Also find me on</p>
               {/* TODO: Replace href with Monica's actual LinkedIn profile URL */}
               <a
-                href="https://www.linkedin.com/in/YOUR_LINKEDIN_HANDLE"
+                href="https://www.linkedin.com/in/monica-vaughan-4a24323b7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-sans text-bark-medium hover:text-sienna transition-colors"
