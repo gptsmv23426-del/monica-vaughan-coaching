@@ -92,6 +92,19 @@ export default function Services() {
               <p className="text-bark-medium font-sans font-light text-sm leading-relaxed flex-1">
                 {service.description}
               </p>
+
+              {/* Pricing */}
+              <div className="mt-6 pt-5 border-t border-sand">
+                <a
+                  href="#contact"
+                  className="text-sienna text-sm font-sans font-medium hover:text-sienna-dark transition-colors duration-200 flex items-center gap-1.5"
+                >
+                  Inquire about this service
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
             </article>
           ))}
         </div>

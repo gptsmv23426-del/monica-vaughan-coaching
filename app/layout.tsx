@@ -28,8 +28,6 @@ export const metadata: Metadata = {
     title: 'The Plumb Line | Monica Vaughan',
     description: 'Find your true vertical. Clarity. Direction. Purpose.',
     type: 'website',
-    // TODO: Add og:url once domain is confirmed (e.g. 'https://theplumbline.com')
-    // TODO: Add og:image — a 1200×630 branded card improves social share previews
   },
 }
 
