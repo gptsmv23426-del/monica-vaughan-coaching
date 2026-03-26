@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, DM_Sans } from 'next/font/google'
+import { Suspense } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
+import { PHProvider } from './providers'
+import { PostHogPageView } from './posthog-pageview'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -49,7 +52,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
       <body className="bg-cream text-bark font-sans antialiased">
-        {children}
+        <PHProvider>
+          <Suspense fallback={null}>
+            <PostHogPageView />
+          </Suspense>
+          {children}
+        </PHProvider>
         <Analytics />
         <SpeedInsights />
       </body>
