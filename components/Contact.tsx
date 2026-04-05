@@ -1,52 +1,9 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
 import { useReveal } from '@/hooks/useReveal'
 
 export default function Contact() {
   const ref = useReveal()
-  const [status, setStatus] = useState<'idle' | 'sent'>('idle')
-  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({})
-
-  const EMAIL_ADDRESS = 'monicalifeplan@gmail.com'
-
-  function validate(name: string, email: string, message: string) {
-    const errs: typeof errors = {}
-    if (!name.trim()) errs.name = 'Please enter your name.'
-    if (!email.trim()) {
-      errs.email = 'Please enter your email address.'
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
-      errs.email = 'Please enter a valid email address.'
-    }
-    if (!message.trim()) errs.message = 'Please include a message.'
-    return errs
-  }
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    const form = e.currentTarget
-    const data = new FormData(form)
-
-    const name = data.get('name') as string
-    const email = data.get('email') as string
-    const message = data.get('message') as string
-
-    const errs = validate(name, email, message)
-    if (Object.keys(errs).length > 0) {
-      setErrors(errs)
-      return
-    }
-    setErrors({})
-
-    const subject = encodeURIComponent(`Coaching inquiry from ${name}`)
-    const body = encodeURIComponent(
-      `Hi Monica,\n\nMy name is ${name} and I'd like to connect.\n\n${message}\n\nBest,\n${name}\n${email}`
-    )
-
-    window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`
-    setStatus('sent')
-    form.reset()
-  }
 
   return (
     <section
@@ -63,7 +20,7 @@ export default function Contact() {
       <div ref={ref} className="relative max-w-5xl mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 items-start">
 
-          {/* ─── Left: CTA copy ─── */}
+          {/* Left: CTA copy */}
           <div className="reveal">
             <p className="text-sienna text-xs tracking-[0.18em] uppercase font-sans mb-5">
               Get in Touch
@@ -73,8 +30,8 @@ export default function Contact() {
               <em className="italic">honest conversation?</em>
             </h2>
             <p className="text-bark-medium font-sans font-light text-base leading-relaxed mb-8">
-              Send me a message and I&apos;ll get back to you within 48 hours. The first
-              conversation is always free — no commitment, no pressure, just a chance
+              Reach out directly and I&apos;ll get back to you as soon as I can. The first
+              conversation is always free &mdash; no commitment, no pressure, just a chance
               to see if we&apos;re a good fit.
             </p>
 
@@ -83,7 +40,7 @@ export default function Contact() {
               {[
                 'A response within 48 hours',
                 'A free, no-obligation introductory call',
-                'Zero pressure — just honest conversation',
+                'Zero pressure &mdash; just honest conversation',
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-moss-light flex items-center justify-center flex-shrink-0">
@@ -98,7 +55,6 @@ export default function Contact() {
 
             <div className="mt-10 pt-8 border-t border-sand">
               <p className="text-xs font-sans text-bark-light mb-3 tracking-wide uppercase">Also find me on</p>
-              {/* TODO: Replace href with Monica's actual LinkedIn profile URL */}
               <a
                 href="https://www.linkedin.com/in/monica-vaughan-4a24323b7"
                 target="_blank"
@@ -138,91 +94,63 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* ─── Right: Form ─── */}
+          {/* Right: Contact info card */}
           <div className="reveal reveal-delay-1">
-            <form
-              onSubmit={handleSubmit}
-              className="bg-cream rounded-[1.75rem] p-8 md:p-10 border border-sand shadow-lg shadow-bark/5"
-              noValidate
-            >
-              <div className="space-y-5">
-                {/* Name */}
-                <div>
-                  <label htmlFor="contact-name" className="block text-xs font-sans text-bark-light uppercase tracking-widest mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    id="contact-name"
-                    name="name"
-                    type="text"
-                    required
-                    aria-describedby={errors.name ? 'contact-name-error' : undefined}
-                    placeholder="First and last name"
-                    className={`w-full bg-linen border rounded-xl px-4 py-3 text-sm font-sans text-bark placeholder:text-bark-light/50 focus:outline-none focus:ring-1 transition-colors ${errors.name ? 'border-red-400 focus:border-red-400 focus:ring-red-200' : 'border-sand focus:border-sienna focus:ring-sienna/20'}`}
-                  />
-                  {errors.name && (
-                    <p id="contact-name-error" role="alert" className="mt-1.5 text-xs text-red-500 font-sans">{errors.name}</p>
-                  )}
+            <div className="bg-cream rounded-[1.75rem] p-8 md:p-10 border border-sand shadow-lg shadow-bark/5">
+
+              <p className="text-xs font-sans text-bark-light uppercase tracking-widest mb-6">
+                Contact Monica Directly
+              </p>
+
+              {/* Phone */}
+              <a
+                href="tel:9565336575"
+                className="group flex items-start gap-4 p-5 rounded-2xl bg-linen border border-sand hover:border-sienna/40 hover:bg-sienna/5 transition-all duration-300 mb-4"
+                aria-label="Call Monica at 956-533-6575"
+              >
+                <div className="w-10 h-10 rounded-full bg-sienna/10 flex items-center justify-center flex-shrink-0 group-hover:bg-sienna/20 transition-colors">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B0714E" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.06 6.06l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
+                  </svg>
                 </div>
-
-                {/* Email */}
                 <div>
-                  <label htmlFor="contact-email" className="block text-xs font-sans text-bark-light uppercase tracking-widest mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    id="contact-email"
-                    name="email"
-                    type="email"
-                    required
-                    aria-describedby={errors.email ? 'contact-email-error' : undefined}
-                    placeholder="you@example.com"
-                    className={`w-full bg-linen border rounded-xl px-4 py-3 text-sm font-sans text-bark placeholder:text-bark-light/50 focus:outline-none focus:ring-1 transition-colors ${errors.email ? 'border-red-400 focus:border-red-400 focus:ring-red-200' : 'border-sand focus:border-sienna focus:ring-sienna/20'}`}
-                  />
-                  {errors.email && (
-                    <p id="contact-email-error" role="alert" className="mt-1.5 text-xs text-red-500 font-sans">{errors.email}</p>
-                  )}
+                  <p className="text-xs font-sans text-bark-light uppercase tracking-widest mb-1">Phone / Text</p>
+                  <p className="font-serif text-xl text-bark group-hover:text-sienna transition-colors">956-533-6575</p>
                 </div>
+              </a>
 
-                {/* Message */}
+              {/* Email */}
+              <a
+                href="mailto:monicallifeplan@gmail.com"
+                className="group flex items-start gap-4 p-5 rounded-2xl bg-linen border border-sand hover:border-sienna/40 hover:bg-sienna/5 transition-all duration-300 mb-6"
+                aria-label="Email Monica at monicallifeplan@gmail.com"
+              >
+                <div className="w-10 h-10 rounded-full bg-sienna/10 flex items-center justify-center flex-shrink-0 group-hover:bg-sienna/20 transition-colors">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B0714E" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </div>
                 <div>
-                  <label htmlFor="contact-message" className="block text-xs font-sans text-bark-light uppercase tracking-widest mb-2">
-                    What&apos;s on Your Mind?
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
-                    required
-                    rows={5}
-                    aria-describedby={errors.message ? 'contact-message-error' : undefined}
-                    placeholder="Tell me a little about where you are and what you're hoping to work through..."
-                    className={`w-full bg-linen border rounded-xl px-4 py-3 text-sm font-sans text-bark placeholder:text-bark-light/50 focus:outline-none focus:ring-1 transition-colors resize-none ${errors.message ? 'border-red-400 focus:border-red-400 focus:ring-red-200' : 'border-sand focus:border-sienna focus:ring-sienna/20'}`}
-                  />
-                  {errors.message && (
-                    <p id="contact-message-error" role="alert" className="mt-1.5 text-xs text-red-500 font-sans">{errors.message}</p>
-                  )}
+                  <p className="text-xs font-sans text-bark-light uppercase tracking-widest mb-1">Email</p>
+                  <p className="font-serif text-lg text-bark group-hover:text-sienna transition-colors break-all">monicallifeplan@gmail.com</p>
                 </div>
+              </a>
 
-                {/* Submit */}
-                <button
-                  type="submit"
-                  className="w-full py-3.5 bg-sienna text-warm-white text-sm font-sans rounded-full hover:bg-sienna-dark transition-all duration-300 shadow-md shadow-sienna/20 hover:shadow-sienna/30 hover:-translate-y-0.5"
-                >
-                  Send Message
-                </button>
-
-                {status === 'sent' && (
-                  <p className="text-center text-sm font-sans text-moss" role="status">
-                    Your mail client should have opened. I look forward to connecting!
-                  </p>
-                )}
+              {/* Quickest response callout */}
+              <div className="flex items-start gap-3 bg-moss-light/30 border border-moss-light rounded-2xl px-5 py-4">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A6344" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <p className="text-sm font-sans text-bark-medium leading-relaxed">
+                  Monica responds quickest to a{' '}
+                  <span className="font-medium text-bark">phone call or text.</span>{' '}
+                  Don&apos;t hesitate to reach out!
+                </p>
               </div>
 
-              <p className="mt-5 text-center text-xs font-sans text-bark-light leading-relaxed">
-                By submitting, you agree that your information will be used solely
-                to respond to your inquiry.
-              </p>
-            </form>
+            </div>
           </div>
 
         </div>
