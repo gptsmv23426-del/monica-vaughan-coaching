@@ -103,29 +103,21 @@ export default function Contact() {
               </p>
 
               {/* Phone */}
-              <a
-                href="tel:9565336575"
-                className="group flex items-start gap-4 p-5 rounded-2xl bg-linen border border-sand hover:border-sienna/40 hover:bg-sienna/5 transition-all duration-300 mb-4"
-                aria-label="Call Monica at 956-533-6575"
-              >
-                <div className="w-10 h-10 rounded-full bg-sienna/10 flex items-center justify-center flex-shrink-0 group-hover:bg-sienna/20 transition-colors">
+              <div className="flex items-start gap-4 p-5 rounded-2xl bg-linen border border-sand mb-4">
+                <div className="w-10 h-10 rounded-full bg-sienna/10 flex items-center justify-center flex-shrink-0">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B0714E" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.06 6.06l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
                   </svg>
                 </div>
                 <div>
                   <p className="text-xs font-sans text-bark-light uppercase tracking-widest mb-1">Phone / Text</p>
-                  <p className="font-serif text-xl text-bark group-hover:text-sienna transition-colors">956-533-6575</p>
+                  <p className="font-serif text-xl text-bark">956-533-6575</p>
                 </div>
-              </a>
+              </div>
 
               {/* Email */}
-              <a
-                href="mailto:monicallifeplan@gmail.com"
-                className="group flex items-start gap-4 p-5 rounded-2xl bg-linen border border-sand hover:border-sienna/40 hover:bg-sienna/5 transition-all duration-300 mb-6"
-                aria-label="Email Monica at monicallifeplan@gmail.com"
-              >
-                <div className="w-10 h-10 rounded-full bg-sienna/10 flex items-center justify-center flex-shrink-0 group-hover:bg-sienna/20 transition-colors">
+              <div className="flex items-start gap-4 p-5 rounded-2xl bg-linen border border-sand mb-6">
+                <div className="w-10 h-10 rounded-full bg-sienna/10 flex items-center justify-center flex-shrink-0">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B0714E" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <rect x="2" y="4" width="20" height="16" rx="2"/>
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
@@ -133,9 +125,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs font-sans text-bark-light uppercase tracking-widest mb-1">Email</p>
-                  <p className="font-serif text-lg text-bark group-hover:text-sienna transition-colors break-all">monicallifeplan@gmail.com</p>
+                  <p className="font-serif text-lg text-bark break-all">monicallifeplan@gmail.com</p>
                 </div>
-              </a>
+              </div>
 
               {/* Quickest response callout */}
               <div className="flex items-start gap-3 bg-moss-light/30 border border-moss-light rounded-2xl px-5 py-4">
