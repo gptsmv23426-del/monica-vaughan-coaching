@@ -20,9 +20,6 @@ export default function Footer() {
             <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-sans tracking-wide">
               {[
                 ['About', '#about'],
-                ['Services', '#services'],
-                ['How It Works', '#how-it-works'],
-                ['Testimonials', '#testimonials'],
                 ['Contact', '#contact'],
               ].map(([label, href]) => (
                 <li key={href}>
