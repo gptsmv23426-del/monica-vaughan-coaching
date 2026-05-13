@@ -40,7 +40,7 @@ export default function Contact() {
               {[
                 'A response within 48 hours',
                 'A free, no-obligation introductory call',
-                'Zero pressure &mdash; just honest conversation',
+                'Zero pressure — just honest conversation',
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-moss-light flex items-center justify-center flex-shrink-0">
